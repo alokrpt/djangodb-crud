@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres-db
+        image: gcr.io/psychic-apex-434412-t1/postgres-db:latest
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_DB
+          value: "django_crud_db"
+        - name: POSTGRES_USER
+          value: "user_alok"
+        - name: POSTGRES_PASSWORD
+          value: "user_password"

@@ -1,0 +1,7 @@
+# Dockerfile for PostgreSQL
+FROM --platform=linux/amd64 postgres:13
+
+# Set environment variables
+ENV POSTGRES_DB=django_crud_db
+ENV POSTGRES_USER=user_alok
+ENV POSTGRES_PASSWORD=user_password
