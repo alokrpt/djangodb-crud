@@ -1,4 +1,4 @@
-# Django CRUD App with PostgreSQL
+# Containerized Django CRUD App with PostgreSQL
 
 This project is a CRUD application built with Django, using PostgreSQL as the database. The application is containerized using Docker and deployed on Google Kubernetes Engine (GKE). Below are the steps taken to set up and deploy the project.
 
