@@ -4,40 +4,34 @@ This project is a CRUD application built with Django, using PostgreSQL as the da
 
 ## Steps
 
+
 1. **Created CRUD App in Django**
    - Developed a Django application with CRUD functionality for managing `Fruit` objects.
    - Relevant code:
      ```python:crudapp/models.py
-     startLine: 1
-     endLine: 13
+    class Fruit(models.Model):
+        name = models.CharField(max_length=100)
+        color = models.CharField(max_length=50)
+        availability = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        app_label = "crudapp"
      ```
 
 2. **Implemented PostgreSQL**
    - Configured PostgreSQL as the database for the Django application.
-   - Relevant code:
-     ```yaml:k8s/postgres-deployment.yaml
-     startLine: 1
-     endLine: 26
-     ```
 
 3. **Tested on Local**
    - Ran the application locally to ensure that the CRUD operations and database interactions work as expected.
 
 4. **Created Docker Images**
    - Created Docker images for both the Django application and the PostgreSQL database.
-   - Relevant code:
-     ```Dockerfile.postgres
-     startLine: 1
-     endLine: 7
-     ```
 
 5. **Created Separate Containers for Both Database and Server**
    - Defined Kubernetes deployments for both the Django application and the PostgreSQL database.
-   - Relevant code:
-     ```yaml:k8s/django-deployment.yaml
-     startLine: 1
-     endLine: 29
-     ```
 
 6. **Pushed to GKE**
    - Deployed the Docker containers to Google Kubernetes Engine (GKE).
@@ -52,8 +46,8 @@ This project is a CRUD application built with Django, using PostgreSQL as the da
 
 1. **Clone the Repository**
    ```sh
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone git@github.com:alokrpt/djangodb-crud.git
+   cd djangodb-crud
    ```
 
 2. **Build Docker Images**
