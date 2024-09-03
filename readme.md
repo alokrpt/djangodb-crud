@@ -7,20 +7,7 @@ This project is a CRUD application built with Django, using PostgreSQL as the da
 
 1. **Created CRUD App in Django**
    - Developed a Django application with CRUD functionality for managing `Fruit` objects.
-   - Relevant code:
-     ```python:crudapp/models.py
-    class Fruit(models.Model):
-        name = models.CharField(max_length=100)
-        color = models.CharField(max_length=50)
-        availability = models.BooleanField(default=True)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        app_label = "crudapp"
-     ```
-
+   
 2. **Implemented PostgreSQL**
    - Configured PostgreSQL as the database for the Django application.
 
